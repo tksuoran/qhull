@@ -457,6 +457,7 @@ endif(UNIX)
 
 add_library(${qhull_CPP} STATIC ${libqhullcpp_SOURCES})
 target_link_libraries(${qhull_CPP} PUBLIC ${qhull_STATICR})
+target_include_directories(${qhull_CPP} PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 set_target_properties(${qhull_CPP} PROPERTIES
     VERSION ${qhull_VERSION}
     OUTPUT_NAME "${qhull_CPP}$<$<CONFIG:Debug>:_d>"
