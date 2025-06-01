@@ -116,6 +116,12 @@ cmake_dependent_option(LINK_APPS_SHARED "Use shared library for linking applicat
 )
 option(QHULL_ENABLE_TESTING "Build and run tests" ON)
 option(BUILD_APPLICATIONS "Build applications" ON)
+option(QHULL_REAL_FLOAT "Use float as real" OFF)
+if(QHULL_REAL_FLOAT)
+    add_compile_definitions(REALfloat=1)
+else()
+    add_compile_definitions(REALfloat=0)
+endif()
 
 if(INCLUDE_INSTALL_DIR)
 else()
